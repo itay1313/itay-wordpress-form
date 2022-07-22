@@ -63,7 +63,7 @@
         "\\bfound_rows\\(\\)"
     ],
     "docroot_fix.enable": false,
-    "lazyload.enabled": true,
+    "lazyload.enabled": false,
     "lazyload.threshold": "",
     "lazyload.process_img": true,
     "lazyload.process_background": true,
@@ -554,7 +554,9 @@
     "varnish.configuration_overloaded": false,
     "varnish.enabled": false,
     "varnish.debug": false,
-    "varnish.servers": [],
+    "varnish.servers": [
+        ""
+    ],
     "browsercache.configuration_overloaded": false,
     "browsercache.enabled": true,
     "browsercache.rewrite": false,
@@ -919,5 +921,8 @@
         "visibility": "never"
     },
     "imageservice.configuration_overloaded": true,
-    "lazyload_process_background": true
+    "lazyload_process_background": true,
+    "fragmentcache": {
+        "engine": ""
+    }
 }

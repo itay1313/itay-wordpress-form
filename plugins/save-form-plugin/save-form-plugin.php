@@ -64,7 +64,8 @@ function save_form_plugin() {
 
         if ($sql)
         {
-            wp_redirect(site_url("/thanks") );
+             wp_redirect( site_url( "/thanks" ) );
+        exit();
         }
         else
         {
