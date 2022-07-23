@@ -43,6 +43,7 @@ class Form_Submission_List extends WP_List_Table {
         case 'phone':
         case 'country':
         case 'date':
+        case 'cb':
             return $item[ $column_name ];
         default:
             return print_r( $item, true ) ; //Show the whole array for troubleshooting purposes
@@ -113,7 +114,7 @@ add_action( 'admin_menu', 'my_add_menu_items' );
 
 function my_render_list_submissions(){
   global $myFormSubmission;
-  echo '</pre><div class="wrap"><h2>Form Submission </h2>'; 
+  echo '</pre><div class="wrap"><h2>Form Entries </h2>'; 
   $myFormSubmission->prepare_items(); 
 ?>
   <form method="post">
@@ -133,7 +134,7 @@ function save_form_table_settings(){
   <table class="form-table">
     <tbody><tr valign="top">
       <th scope="row" class="titledesc">
-        <label for="sfp_form_submission_table">Table Name <span class="woocommerce-help-tip" data-tip="Enter Submission table name"></span></label>
+        <label for="sfp_form_submission_table">Change Table Name <span class="woocommerce-help-tip" data-tip="Enter Submission table name"></span></label>
       </th>
       <td class="forminp forminp-text">
         <input name="sfp_form_submission_table" id="sfp_form_submission_table" type="text" required="true" style="" value="<?php echo $val; ?>" class="" placeholder=""> 							</td>

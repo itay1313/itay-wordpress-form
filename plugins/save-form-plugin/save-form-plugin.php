@@ -77,5 +77,4 @@ function save_form_plugin() {
 add_action('init', 'save_form_plugin');
 
 include "list-table.php";
-// include "settings.php";
 

@@ -1,0 +1,451 @@
+/*
+Theme Name: ItaysTheme
+Theme URI: https://github.com/itay1313/itays-form-template
+Author: TidyThemes
+Author URI: http://tidythemes.com/
+Description: Please read: tidythemes.com/concept. Donations: https://calmestghost.com/donate. ItaysTheme is the definitive WordPress boilerplate starter theme. We've carefully constructed the most clean and minimalist theme possible for designers and developers to use as a base to build websites for clients or to build completely custom themes from scratch. Clean, simple, unstyled, semi-minified, unformatted, and valid code, SEO-friendly, jQuery-enabled, no programmer comments, standardized and as white label as possible, and most importantly, the CSS is reset for cross-browser-compatability and no intrusive visual CSS styles have been added whatsoever. A perfect skeleton theme. For support and suggestions, go to: https://github.com/itay1313/itays-form-template/issues. Thank you.
+Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Version: 2022.4
+Requires at least: 5.2
+Tested up to: 5.9
+Requires PHP: 7.0
+License: GNU General Public License v3 or Later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: ItaysTheme
+
+ItaysTheme WordPress Theme © 2011-2022 TidyThemes
+ItaysTheme is distributed under the terms of the GNU GPL
+*/
+
+
+:root {
+  --size: 0.5rem;
+  /* 8px */
+  --primary-color: #61A4D9;
+  --bg: #EFF3F8;
+  --card-bg: #FAFAFA;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  font-family: 'Exo';
+}
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+a {
+  font-weight: 700;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* starting to style */
+
+div#wrapper {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* home */
+section {
+  display: grid;
+  place-content: center;
+  background: var(--bg);
+  grid-gap: 2.5rem;
+  padding: 2.5rem;
+}
+
+.entry-content {
+  background: var(--card-bg);
+  box-shadow: 0rem 0.25rem 2.75rem -0.0625rem rgb(0 0 0 / 7%);
+  padding: 1.875rem 3.75rem;
+  position: relative;
+  max-width: 974px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3125rem;
+  line-height: 1.75rem;
+  color: #B1BCCA;
+  text-align: center;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3125rem;
+  line-height: 1.75rem;
+  color: #000000;
+  margin-bottom: 1.125rem;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.5625rem;
+  color: #686868;
+
+}
+
+hr {
+  border: 0.0625rem dashed #949494;
+  margin: 1.875rem 0;
+}
+
+a.post-edit-link,
+#footer {
+  display: none;
+}
+
+/* form style */
+
+.input-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.875rem;
+  margin: 1.875rem 0;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+}
+
+form input,
+form select {
+  border: 0.0625rem solid #686868;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  color: #000000;
+  padding: 0.75rem 1rem;
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* SVG background image */
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.738.884h-7.5l4 4.5 3.5-4.5Z' fill='%23686868'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: calc(100% - 0.6875rem) center;
+  background-repeat: no-repeat;
+}
+
+form input[type="checkbox"] {
+  aspect-ratio: 1;
+  padding: 0.6875rem;
+}
+
+/* date style */
+
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::after {
+  content: '';
+  display: block;
+  background: url('../../../wp-content/uploads/2022/07/date.png') no-repeat;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+form input:focus {
+  border: 0.0625rem solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+form .button-container input[type="submit"] {
+  background: var(--primary-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 167.9%;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  padding: 0.6875rem 3.125rem;
+  text-transform: uppercase;
+  -webkit-mask: url("./bgmask.png");
+  mask: url("./bgmask.png");
+  -webkit-mask-size: 7100% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(70) forwards;
+  animation: ani2 0.7s steps(70) forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+form .button-container input[type="submit"]:focus {
+  border: 0.0625rem solid #000;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.8125rem;
+  color: #000000;
+  margin-bottom: 1.875rem;
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.007 1.337a1.147 1.147 0 0 1-.249.633c-.129.1-.259.207-.379.317-.003 0-.01 0-.01.003-3.033 2.591-5.336 5.922-6.57 9.72-.003-.004-.002-.007-.009-.014-.27.747-1.055 1.261-1.948 1.2-.76-.053-1.394-.509-1.662-1.121-.033-.102-.066-.196-.1-.298-.002-.003-.009-.004-.008-.007a21.79 21.79 0 0 0-3.764-6.65.559.559 0 0 1-.088-.109 1.165 1.165 0 0 1-.246-.8c.047-.686.688-1.203 1.432-1.152.283.02.531.116.74.262.002.004.002.004.009.004.077.075.161.153.242.235a.076.076 0 0 0 .021.024C4.73 4.87 6.017 6.728 6.97 8.275 8.655 5.308 10.911 2.333 13.81.39c.108-.075.216-.15.327-.219.198-.088.422-.136.666-.119.711.05 1.25.628 1.205 1.285Z' fill='%2340BE46'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.imageabsolute {
+  position: absolute;
+  bottom: 0;
+}
+
+/* some cool effects why not? */
+.mask {
+  position: absolute;
+  color: #fff;
+  background: #40be46;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 0.6875rem 3.125rem;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 167.9%;
+  border: 1px solid;
+  width: 100%;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+
+.button-container {
+  position: relative;
+  max-width: 173px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.button-container input[type="submit"]:hover {
+  -webkit-animation: ani 0.7s steps(70) forwards;
+  animation: ani 0.7s steps(70) forwards;
+}
+
+/* breakpoints */
+@media (min-width: 768px) {
+  form {
+    margin-right: 11.5625rem;
+    padding-bottom: 5.3125rem;
+  }
+
+  .imageabsolute {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .align-center-mobile {
+    text-align: center;
+  }
+
+  .entry-content,
+  section {
+    padding: 1.25rem;
+  }
+
+  .input-rows {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.875rem;
+    margin: 1.875rem 0;
+  }
+
+  form {
+    margin-right: 0;
+    padding-bottom: 16vh;
+    bottom: -13vh;
+  }
+
+  .checkbox {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .imageabsolute {
+    bottom: -8.75rem;
+    text-align: center;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media(min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+}
