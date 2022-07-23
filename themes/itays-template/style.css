@@ -155,7 +155,7 @@ section {
   box-shadow: 0rem 0.25rem 2.75rem -0.0625rem rgb(0 0 0 / 7%);
   padding: 1.875rem 3.75rem;
   position: relative;
-  max-width: 974px;
+  max-width: 60.875rem;
   margin: 0 auto;
 }
 
@@ -228,7 +228,7 @@ form select {
   appearance: none;
   /* SVG background image */
   background-image: url("data:image/svg+xml,%3Csvg width='8' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.738.884h-7.5l4 4.5 3.5-4.5Z' fill='%23686868'/%3E%3C/svg%3E");
-  background-size: 12px;
+  background-size: 0.75rem;
   background-position: calc(100% - 0.6875rem) center;
   background-repeat: no-repeat;
 }
@@ -248,10 +248,10 @@ input[type="date"]::after {
   content: '';
   display: block;
   background: url('../../../wp-content/uploads/2022/07/date.png') no-repeat;
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
   position: absolute;
-  right: 14px;
+  right: 0.875rem;
   pointer-events: none;
 }
 
@@ -331,7 +331,7 @@ input[type="checkbox"]:checked {
   font-weight: 700;
   font-size: 1.0625rem;
   line-height: 167.9%;
-  border: 1px solid;
+  border: 0.0625rem solid;
   width: 100%;
 }
 
@@ -386,7 +386,7 @@ input[type="checkbox"]:checked {
 
 .button-container {
   position: relative;
-  max-width: 173px;
+  max-width: 10.8125rem;
   overflow: hidden;
   transition: 0.5s;
 }
@@ -432,8 +432,8 @@ input[type="checkbox"]:checked {
   }
 
   .checkbox {
-    font-size: 13px;
-    line-height: 22px;
+    font-size: 0.8125rem;
+    line-height: 1.375rem;
   }
 
   .imageabsolute {
