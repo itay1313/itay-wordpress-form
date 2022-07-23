@@ -2,4 +2,7 @@
 /cache/
 /w3tc-config/
 /upgrade/
+/ai1wm-backups/
 .DS_Store
+advanced-cache.php
+object-cache.php
