@@ -333,6 +333,7 @@ input[type="checkbox"]:checked {
   line-height: 167.9%;
   border: 0.0625rem solid;
   width: 100%;
+  left: 0;
 }
 
 @-webkit-keyframes ani {
